@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="index.js" defer></script>
+</head>
+<body>
+    <div id="todoList"></div>
+
+    <button id="add-todo">Add Item</button>
+
+    <dialog id="taskDialog">
+    <form id="taskForm" method="dialog">
+      <h3>New Task</h3>
+      
+      <div class="field">
+        <label for="title">Task Title</label>
+        <input type="text" id="title" name="title" required>
+      </div>
+
+      <div class="field">
+        <label for="description">Task Description</label>
+        <input type="text" id="description" name="description" required>
+      </div>
+
+      <div class="field">
+        <label for="due-date">Due date</label>
+        <input type="date" id="due-date" name="due-date" required>
+      </div>
+
+      <div class="field">
+        <label for="priority">Priority</label>
+        <select id="priority" name="priority">
+          <option value="Low">Low</option>
+          <option value="Medium" selected>Medium</option>
+          <option value="High">High</option>
+        </select>
+      </div>
+
+      <div class="actions">
+        <!-- formnovalidate lets Cancel bypass required fields -->
+        <button type="submit" value="cancel" formnovalidate>Cancel</button>
+        <button type="submit" value="confirm">Save Task</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>
