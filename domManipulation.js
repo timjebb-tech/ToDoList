@@ -19,11 +19,20 @@ function displayTodo(todo) {
     const title = document.createElement('h3');
     title.textContent = todo.title;
 
-    const details = document.createElement('p');
-    details.textContent = todo.description;
+    const description = document.createElement('p');
+    description.textContent = todo.description;
+
+    const dueDate = document.createElement('p');
+    dueDate.textContent = todo.dueDate;
+
+    const project = document.createElement('p');
+    project.textContent = todo.project;
+
+
+
 
     console.log("adding card");
-    card.append(title, details);
+    card.append(title, description, dueDate, project);
     container.appendChild(card);
 }
 

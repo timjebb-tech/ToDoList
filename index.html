@@ -9,42 +9,68 @@
 <body>
     <div id="todoList"></div>
 
+   <!--- buttons -->
     <button id="add-todo">Add Item</button>
+    <button id="add-project">Add Project</button>
 
+
+    <!--- dialogs -->
     <dialog id="taskDialog">
-    <form id="taskForm" method="dialog">
-      <h3>New Task</h3>
-      
-      <div class="field">
-        <label for="title">Task Title</label>
-        <input type="text" id="title" name="title" required>
-      </div>
+        <form id="taskForm" method="dialog">
+        <h3>New Task</h3>
+        
+        <div class="field">
+            <label for="title">Task Title</label>
+            <input type="text" id="title" name="title" required>
+        </div>
 
-      <div class="field">
-        <label for="description">Task Description</label>
-        <input type="text" id="description" name="description" required>
-      </div>
+        <div class="field">
+            <label for="description">Task Description</label>
+            <input type="text" id="description" name="description" required>
+        </div>
 
-      <div class="field">
-        <label for="due-date">Due date</label>
-        <input type="date" id="due-date" name="due-date" required>
-      </div>
+        <div class="field">
+            <label for="due-date">Due date</label>
+            <input type="date" id="due-date" name="due-date" required>
+        </div>
 
-      <div class="field">
-        <label for="priority">Priority</label>
-        <select id="priority" name="priority">
-          <option value="Low">Low</option>
-          <option value="Medium" selected>Medium</option>
-          <option value="High">High</option>
-        </select>
-      </div>
+        <div class="field">
+            <label for="priority">Priority</label>
+            <select id="priority" name="priority">
+            <option value="Low">Low</option>
+            <option value="Medium" selected>Medium</option>
+            <option value="High">High</option>
+            </select>
+        </div>
 
-      <div class="actions">
-        <!-- formnovalidate lets Cancel bypass required fields -->
-        <button type="submit" value="cancel" formnovalidate>Cancel</button>
-        <button type="submit" value="confirm">Save Task</button>
-      </div>
-    </form>
-  </dialog>
+        <div class="field">
+            <label for="project">Project</label>
+            <select id="project"> </select>
+            </select>
+        </div>
+
+        <div class="actions">
+            <!-- formnovalidate lets Cancel bypass required fields -->
+            <button type="submit" value="cancel" formnovalidate>Cancel</button>
+            <button type="submit" value="confirm">Save Task</button>
+        </div>
+        </form>
+    </dialog>
+
+    <dialog id="projectsDialog">
+        <form id="projectsForm" method="dialog">
+  
+        <div class="field">
+            <label for="project">Project</label>
+            <input type="text" id="projectName" name="projectName" required>
+        </div>
+
+        <div class="actions">
+            <!-- formnovalidate lets Cancel bypass required fields -->
+            <button type="submit" value="cancel" formnovalidate>Cancel</button>
+            <button type="submit" value="confirm">Save Task</button>
+        </div>
+        </form>
+    </dialog>
 </body>
 </html>
