@@ -1,5 +1,5 @@
 export {createTodo, doAddTodo, doAddProject}
-import {todoList, projects} from './index.js';
+import {todoList, projects, updateProjectSelector} from './index.js';
 import {displayTodoList} from './domManipulation.js'
 
 // const canFly = () => ({
@@ -34,7 +34,8 @@ function doAddTodo() {
       title: taskData.title,
       description: taskData.description,
       dueDate: taskData['due-date'],
-      priority: taskData.priority
+      priority: taskData.priority,
+      project:taskData.project
     });
 
     todoList.add(newTodo);
@@ -92,9 +93,10 @@ function doAddProject() {
     // This block runs after the user submits the modal
     if (!projects.includes(projectData.projectName))    {
         console.log(`Adding ${projectData.projectName} to list of projects`);
-        projects.push(projectData.projectName)
+        projects.push(projectData.projectName);
+        updateProjectSelector();
     }
-    else  {
+    else  { 
         alert(`Project ${projectData.projectName} already exists`)
     }
   });

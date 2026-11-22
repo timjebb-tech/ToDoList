@@ -1,7 +1,7 @@
 import {doAddTodo, doAddProject} from './todo.js';
 import {createTodoList} from './todoList.js';
 
-export {todoList, projects}
+export {todoList, projects, updateProjectSelector}
 
 let projects = ["General"];
 
@@ -19,3 +19,18 @@ addTodoBtn.addEventListener('click', () => {
 addProjectBtn.addEventListener('click', () => {
     doAddProject();
 });
+
+
+
+function updateProjectSelector() {
+    const dropdown = document.getElementById('project-selector');
+    dropdown.options.length = 0;
+    projects.forEach((project) => {        
+        const option = document.createElement('option');
+        option.value = project.toLowerCase();
+        option.textContent = project;
+        dropdown.append(option);
+    });
+}
+
+updateProjectSelector();
