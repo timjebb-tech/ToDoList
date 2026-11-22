@@ -25,12 +25,20 @@ addProjectBtn.addEventListener('click', () => {
 function updateProjectSelector() {
     const dropdown = document.getElementById('project-selector');
     dropdown.options.length = 0;
-    projects.forEach((project) => {        
+    projects.forEach((project) => {     
+        console.log(`updateProjectSelector():  ${project}`);
         const option = document.createElement('option');
         option.value = project.toLowerCase();
         option.textContent = project;
         dropdown.append(option);
     });
 }
+
+const dropdown = document.getElementById("project-selector");
+
+dropdown.addEventListener("change", function(event) {
+    const selectedValue = event.target.value;
+    displayProjects(selectedValue);
+});
 
 updateProjectSelector();

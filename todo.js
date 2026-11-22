@@ -52,6 +52,7 @@ function openTodoModal(onConfirmCallback) {
     const form = document.getElementById('taskForm');
 
     const dropdown = document.getElementById('project');
+    dropdown.options.length = 0;
 
     projects.forEach((project) => {
         const option = document.createElement('option');

@@ -5,10 +5,16 @@ const container = document.getElementById('todoList');
 
 function displayTodoList() {
     clearTodoListDisplay();
+    const currentProjectSelector = document.getElementById('project-selector');
+    const currentProject = currentProjectSelector.value;
+    console.log(`displayTodoList() : currentProject = ${currentProject}`);
     const items = todoList.getItems();
     console.log(`Displaying ${items.length} items`);
     for (const todo of items) {
-        displayTodo(todo);
+        console.log(`displayTodoList() : todo.project = ${todo.project}`);
+        if (todo.project == currentProject) {
+            displayTodo(todo);
+        }
     }
 }
 
