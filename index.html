@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script type="module" src="index.js" defer></script>
+    <link rel="stylesheet" href="buttons.css">
+    <link rel="stylesheet" href="card.css">
 </head>
 <body>
-    <div id="todoList"></div>
+    
 
    <!--- buttons -->
-    <button id="add-todo">Add Item</button>
-    <button id="add-project">Add Project</button>
+    <button class="btn btn-jelly" id="add-todo">Add Item</button>
+    <button class="btn btn-gradient" id="add-project">Add Project</button>
     
     <div class="field">
         <label for="project-selector">Select Project</label>
@@ -19,6 +21,7 @@
         </select>
     </div>
 
+    <div id="todoList"></div>
 
     <!--- dialogs -->
     <dialog id="taskDialog">
@@ -57,8 +60,8 @@
 
         <div class="actions">
             <!-- formnovalidate lets Cancel bypass required fields -->
-            <button type="submit" value="cancel" formnovalidate>Cancel</button>
-            <button type="submit" value="confirm">Save Task</button>
+            <button class="btn btn-brutalist" type="submit" value="cancel" formnovalidate>Cancel</button>
+            <button class="btn btn-brutalist" type="submit" value="confirm">Save Task</button>
         </div>
         </form>
     </dialog>
@@ -73,8 +76,8 @@
 
         <div class="actions">
             <!-- formnovalidate lets Cancel bypass required fields -->
-            <button type="submit" value="cancel" formnovalidate>Cancel</button>
-            <button type="submit" value="confirm">Save Task</button>
+            <button class="btn btn-neon" type="submit" value="cancel" formnovalidate>Cancel</button>
+            <button class="btn btn-neon" type="submit" value="confirm">Save Project</button>
         </div>
         </form>
     </dialog>

@@ -1,0 +1,86 @@
+.btn {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.85rem 1.75rem;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.btn-jelly {
+  background: linear-gradient(135deg, #ff6b9d, #ff8e53);
+  color: #ffffff;
+  border-radius: 999px;
+  box-shadow: 0 6px 20px rgba(255, 107, 157, 0.4);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+}
+
+.btn-jelly:hover {
+  transform: scale(1.08) rotate(-2deg);
+  box-shadow: 0 10px 25px rgba(255, 107, 157, 0.55);
+}
+
+.btn-jelly:active {
+  transform: scale(0.94);
+}
+.btn-gradient {
+  background: linear-gradient(90deg, #00dbde, #fc00ff, #ffbe0b, #00dbde);
+  background-size: 300% 100%;
+  color: #ffffff;
+  border-radius: 14px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  transition: background-position 0.5s ease, transform 0.2s ease;
+}
+
+.btn-gradient:hover {
+  background-position: 100% 0;
+  transform: translateY(-3px);
+}
+
+.btn-gradient:active {
+  transform: translateY(0);
+}
+
+.btn-brutalist {
+  background-color: #ffe600;
+  color: #111111;
+  border: 3px solid #111111;
+  border-radius: 10px;
+  box-shadow: 5px 5px 0px #111111;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.15s ease;
+}
+
+.btn-brutalist:hover {
+  background-color: #7df9ff;
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0px #111111;
+}
+
+.btn-brutalist:active {
+  transform: translate(4px, 4px);
+  box-shadow: 1px 1px 0px #111111;
+}
+
+.btn-neon {
+  background-color: #181824;
+  color: #00f5d4;
+  border: 2px solid #00f5d4;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0, 245, 212, 0.3);
+  transition: all 0.25s ease;
+}
+
+.btn-neon:hover {
+  background-color: #00f5d4;
+  color: #181824;
+  box-shadow: 
+    0 0 12px #00f5d4,
+    0 0 28px rgba(0, 245, 212, 0.7);
+}
+
+.btn-neon:active {
+  transform: scale(0.97);
+}

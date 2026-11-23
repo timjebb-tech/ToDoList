@@ -21,26 +21,8 @@ function displayTodoList() {
 }
 
 function displayTodo(todo) {
-    const card = document.createElement('div');
-    card.classList.add('card');
+    const card = createTaskCard(todo.title, todo.description, todo.dueDate, todo.priority, todo.project)
 
-    const title = document.createElement('h3');
-    title.textContent = todo.title;
-
-    const description = document.createElement('p');
-    description.textContent = todo.description;
-
-    const dueDate = document.createElement('p');
-    dueDate.textContent = todo.dueDate;
-
-    const project = document.createElement('p');
-    project.textContent = todo.project;
-
-
-
-
-    console.log("adding card");
-    card.append(title, description, dueDate, project);
     container.appendChild(card);
 }
 
@@ -48,3 +30,47 @@ function clearTodoListDisplay() {
     container.replaceChildren();
 }
 
+function createTaskCard(title, description, dueDate, priority, project) {
+  // Main card container
+  const card = document.createElement('div');
+  card.className = 'task-card';
+
+  // Header
+  const header = document.createElement('div');
+  header.className = 'task-card__header';
+
+  const projectBadge = document.createElement('span');
+  projectBadge.className = 'task-card__project';
+  projectBadge.textContent = project;
+
+  const priorityBadge = document.createElement('span');
+  const priorityLevel = priority.toLowerCase(); // 'high', 'medium', or 'low'
+  priorityBadge.className = `task-card__priority task-card__priority--${priorityLevel}`;
+  priorityBadge.textContent = priority;
+
+  header.append(projectBadge, priorityBadge);
+
+  // Body
+  const cardTitle = document.createElement('h3');
+  cardTitle.className = 'task-card__title';
+  cardTitle.textContent = title;
+
+  const cardDesc = document.createElement('p');
+  cardDesc.className = 'task-card__description';
+  cardDesc.textContent = description;
+
+  // Footer
+  const footer = document.createElement('div');
+  footer.className = 'task-card__footer';
+
+  const dateSpan = document.createElement('span');
+  dateSpan.className = 'task-card__due-date';
+  dateSpan.textContent = `Due: ${dueDate}`;
+
+  footer.appendChild(dateSpan);
+
+  // Assemble the card
+  card.append(header, cardTitle, cardDesc, footer);
+
+  return card;
+}
