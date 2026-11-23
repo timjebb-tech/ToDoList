@@ -1,4 +1,5 @@
 export {displayTodoList}
+
 import {todoList} from './index.js';
 
 const container = document.getElementById('todoList');
@@ -12,7 +13,8 @@ function displayTodoList() {
     console.log(`Displaying ${items.length} items`);
     for (const todo of items) {
         console.log(`displayTodoList() : todo.project = ${todo.project}`);
-        if (todo.project == currentProject) {
+        console.log(`currentProject = ${currentProject}`);
+        if ((todo.project == currentProject) || (currentProject == "all")) {
             displayTodo(todo);
         }
     }
@@ -45,3 +47,4 @@ function displayTodo(todo) {
 function clearTodoListDisplay() {
     container.replaceChildren();
 }
+
