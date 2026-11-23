@@ -7,6 +7,7 @@
     <script type="module" src="index.js" defer></script>
     <link rel="stylesheet" href="buttons.css">
     <link rel="stylesheet" href="card.css">
+    <link rel="stylesheet" href="select.css">
 </head>
 <body>
     
@@ -14,11 +15,14 @@
    <!--- buttons -->
     <button class="btn btn-jelly" id="add-todo">Add Item</button>
     <button class="btn btn-gradient" id="add-project">Add Project</button>
-    
-    <div class="field">
-        <label for="project-selector">Select Project</label>
+    <br>
+    <br>
+    <div class="select-wrapper">
+        <label class="select-label" for="project-selector">Select Project</label>
+        <div class="custom-select">
         <select id="project-selector"> </select>
         </select>
+        </div>
     </div>
 
     <div id="todoList"></div>
