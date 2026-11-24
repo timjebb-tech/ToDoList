@@ -30,6 +30,9 @@ function clearTodoListDisplay() {
     container.replaceChildren();
 }
 
+const modal = document.getElementById('task-modal');
+const closeBtn = document.getElementById('modal-close');
+
 function createTaskCard(title, description, dueDate, priority, project) {
   // Main card container
   const card = document.createElement('div');
@@ -72,5 +75,27 @@ function createTaskCard(title, description, dueDate, priority, project) {
   // Assemble the card
   card.append(header, cardTitle, cardDesc, footer);
 
+  // Open expanded view on click
+  card.addEventListener('click', () => openExpandedCard(title, description, dueDate, priority, project));
+
   return card;
 }
+
+function openExpandedCard(title, description, dueDate, priority, project) {
+  document.getElementById('modal-project').textContent = project;
+  document.getElementById('modal-title').textContent = title;
+  document.getElementById('modal-description').textContent = description;
+  document.getElementById('modal-due-date').textContent = `Due: ${dueDate}`;
+
+  const priorityEl = document.getElementById('modal-priority');
+  priorityEl.textContent = priority;
+  priorityEl.className = `task-card__priority task-card__priority--${priority.toLowerCase()}`;
+
+  modal.showModal(); // Opens native modal with Escape-key support
+}
+
+// Close via button or clicking outside the card
+closeBtn.addEventListener('click', () => modal.close());
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) modal.close();
+  });

@@ -57,8 +57,10 @@ function openTodoModal(onConfirmCallback) {
     projects.forEach((project) => {
         const option = document.createElement('option');
         option.value = project.toLowerCase();
-        option.textContent = project;
-        dropdown.append(option);
+        if (option.value != "all") {
+          option.textContent = project;
+          dropdown.append(option);
+        }
     });
 
   form.reset();

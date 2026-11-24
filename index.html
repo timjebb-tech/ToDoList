@@ -37,9 +37,9 @@
             <input type="text" id="title" name="title" required>
         </div>
 
-        <div class="field">
+        <div class="input-wrapper">
             <label for="description">Task Description</label>
-            <input type="text" id="description" name="description" required>
+            <textarea type="text" id="description" name="description" required></textarea>
         </div>
 
         <div class="field">
@@ -84,6 +84,29 @@
             <button class="btn btn-neon" type="submit" value="confirm">Save Project</button>
         </div>
         </form>
+    </dialog>
+
+
+    <!-- Shared Expanded Card Modal -->
+    <dialog id="task-modal" class="task-modal">
+        <div class="task-modal__content">
+            <div class="task-card__header">
+            <span id="modal-project" class="task-card__project"></span>
+            <div class="task-modal__actions">
+                <span id="modal-priority" class="task-card__priority"></span>
+                <button id="modal-close" class="task-modal__close" aria-label="Close">&times;</button>
+            </div>
+            </div>
+
+            <h2 id="modal-title" class="task-modal__title"></h2>
+            
+            <!-- Scrollable body for variable/long content -->
+            <div id="modal-description" class="task-modal__body"></div>
+
+            <div class="task-card__footer">
+            <span id="modal-due-date" class="task-card__due-date"></span>
+            </div>
+        </div>
     </dialog>
 </body>
 </html>
