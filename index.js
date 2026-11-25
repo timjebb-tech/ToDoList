@@ -2,9 +2,10 @@ import {doAddTodo, doAddProject} from './todo.js';
 import {createTodoList} from './todoList.js';
 import {displayTodoList} from './domManipulation.js'
 
-export {todoList, projects, updateProjectSelector}
+export {todoList, projects, updateProjectSelector, currentActiveTask}
 
 let projects = ["All", "General"];
+let currentActiveTask = null;
 
 const addTodoBtn = document.getElementById('add-todo');
 const todoList = createTodoList()

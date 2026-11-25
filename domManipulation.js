@@ -1,6 +1,8 @@
 export {displayTodoList}
 
-import {todoList} from './index.js';
+import {doAddTodo} from './todo.js';
+
+import {todoList, currentActiveTask} from './index.js';
 
 const container = document.getElementById('todoList');
 
@@ -32,6 +34,8 @@ function clearTodoListDisplay() {
 
 const modal = document.getElementById('task-modal');
 const closeBtn = document.getElementById('modal-close');
+
+const addSubtaskBtn = document.getElementById('modal-add-subtask--btn');
 
 function createTaskCard(title, description, dueDate, priority, project) {
   // Main card container
@@ -85,17 +89,21 @@ function openExpandedCard(title, description, dueDate, priority, project) {
   document.getElementById('modal-project').textContent = project;
   document.getElementById('modal-title').textContent = title;
   document.getElementById('modal-description').textContent = description;
-  document.getElementById('modal-due-date').textContent = `Due: ${dueDate}`;
+  document.getElementById('modal-due-date').textContent = dueDate;
 
   const priorityEl = document.getElementById('modal-priority');
   priorityEl.textContent = priority;
   priorityEl.className = `task-card__priority task-card__priority--${priority.toLowerCase()}`;
 
   modal.showModal(); // Opens native modal with Escape-key support
+  currentActiveTask = title;
 }
 
 // Close via button or clicking outside the card
 closeBtn.addEventListener('click', () => modal.close());
+
 modal.addEventListener('click', (e) => {
   if (e.target === modal) modal.close();
   });
+
+addSubtaskBtn.addEventListener('click', () => doAddTodo(currentActiveTask));

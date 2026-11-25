@@ -1,13 +1,13 @@
 export {createTodo, doAddTodo, doAddProject}
-import {todoList, projects, updateProjectSelector} from './index.js';
+import {todoList, projects, updateProjectSelector, currentActiveTask} from './index.js';
 import {displayTodoList} from './domManipulation.js'
 
 // const canFly = () => ({
 //   fly: () => console.log("Flying into the sky!")
 // });
 
-const createTodo  = ({title, description, dueDate, priority, project='General'}) => {
-  const contents = { title, description, dueDate, priority, project };
+const createTodo  = ({title, description, dueDate, priority, project='General', parentTask=null}) => {
+  const contents = { title, description, dueDate, priority, project, parentTask };
   console.log("createTodo(): contents =", contents);
   
   // Combine state and behaviours into a single new object
@@ -22,7 +22,7 @@ const createTodo  = ({title, description, dueDate, priority, project='General'})
 
 
 // 2. Your calling function passes a callback to receive the data
-function doAddTodo() {
+function doAddTodo(parentTask=null) {
   
     openTodoModal((taskData) => {
     // This block runs after the user submits the modal
@@ -35,7 +35,8 @@ function doAddTodo() {
       description: taskData.description,
       dueDate: taskData['due-date'],
       priority: taskData.priority,
-      project:taskData.project
+      project:taskData.project,
+      parentTask:parentTask
     });
 
     todoList.add(newTodo);

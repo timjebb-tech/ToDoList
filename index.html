@@ -88,7 +88,7 @@
 
 
     <!-- Shared Expanded Card Modal -->
-    <dialog id="task-modal" class="task-modal">
+    <!-- <dialog id="task-modal" class="task-modal">
         <div class="task-modal__content">
             <div class="task-card__header">
             <span id="modal-project" class="task-card__project"></span>
@@ -101,12 +101,55 @@
             <h2 id="modal-title" class="task-modal__title"></h2>
             
             <!-- Scrollable body for variable/long content -->
-            <div id="modal-description" class="task-modal__body"></div>
+            <!-- <div id="modal-description" class="task-modal__body"></div>
 
             <div class="task-card__footer">
             <span id="modal-due-date" class="task-card__due-date"></span>
+            <div class="task-modal__footer-actions">
+                <button id="modal-action-btn" class="btn-primary">Add subtask</button>
+            </div>
             </div>
         </div>
+    </dialog> --> 
+
+    <dialog id="task-modal" class="task-modal">
+        <div class="task-modal__wrapper">
+            
+            <!-- Top Tinted Header Zone -->
+            <div class="task-modal__header">
+            <div class="task-modal__meta">
+                <span id="modal-project" class="task-card__project"></span>
+                <span id="modal-priority" class="task-card__priority"></span>
+            </div>
+            <button id="modal-close" class="task-modal__close" aria-label="Close">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            </div>
+
+            <!-- Scrollable Main Content -->
+            <div class="task-modal__body">
+            <h2 id="modal-title" class="task-modal__title"></h2>
+            <p id="modal-description" class="task-modal__description"></p>
+            </div>
+
+            <!-- Spacious Footer -->
+            <div class="task-modal__footer">
+            <div class="task-modal__due">
+                <span class="task-modal__due-label">Due Date</span>
+                <span id="modal-due-date" class="task-modal__due-value"></span>
+            </div>
+            <div class="task-modal__footer-actions">
+                <button id="modal-add-subtask--btn" class="btn-primary">Add Subtask</button>
+            </div>
+            </div>
+
+        </div>
     </dialog>
+
+
+
 </body>
 </html>
