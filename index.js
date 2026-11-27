@@ -4,6 +4,10 @@ import {displayTodoList} from './domManipulation.js'
 
 export {todoList, projects, updateProjectSelector, currentActiveTask}
 
+export function setCurrentActiveTask(task) {
+  currentActiveTask = task;
+}
+
 let projects = ["All", "General"];
 let currentActiveTask = null;
 

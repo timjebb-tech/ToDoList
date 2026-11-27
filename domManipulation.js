@@ -2,7 +2,7 @@ export {displayTodoList}
 
 import {doAddTodo} from './todo.js';
 
-import {todoList, currentActiveTask} from './index.js';
+import {todoList, currentActiveTask, setCurrentActiveTask} from './index.js';
 
 const container = document.getElementById('todoList');
 
@@ -96,7 +96,7 @@ function openExpandedCard(title, description, dueDate, priority, project) {
   priorityEl.className = `task-card__priority task-card__priority--${priority.toLowerCase()}`;
 
   modal.showModal(); // Opens native modal with Escape-key support
-  currentActiveTask = title;
+  setCurrentActiveTask(title);
 }
 
 // Close via button or clicking outside the card
